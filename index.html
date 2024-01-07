@@ -31,6 +31,17 @@
     border-radius: 8px;
     color: black;
    }
+
+    .footer-bar {
+    background-color: #3498db; /* Blue background color */
+    color: #fff; /* White text color */
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+   }
  
     /* Use a bold font for the logo text */
     .logo {
@@ -87,6 +98,9 @@
     <h1>Welcome to Taj Imaginary</h1>
     <p>This is a demo website for learning how to create a responsive webpage.</p>
   </div>
+  <div class="footer-bar" id="footerBar">
+    <p>Total Visitors: <span id="visitorCount">0</span></p>
+ </div>
 </body>
 <script>
 document.getElementById('contactLink').addEventListener('click', function() {
@@ -97,5 +111,14 @@ document.getElementById('contactLink').addEventListener('click', function() {
         warningBox.style.display = 'none';
     }, 3000); // 5000 milliseconds = 5 seconds
 });
+  let totalVisitors = 0;
+
+function updateVisitorCount() {
+    totalVisitors++; // Increment the total visitors count
+    document.getElementById('visitorCount').innerText = totalVisitors;
+}
+
+// Update the count every 5 seconds (5000 milliseconds)
+setInterval(updateVisitorCount, 5000);
 </script>
 </html>

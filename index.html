@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Use a background image for the body element */
+    body {
+      background-image: url("img.jpeg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      background-color: rgba(255, 255, 255, 0.5);	
+    }
+ 
+    /* Use a flexbox layout for the menu bar */
+    .menu {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0);
+      padding: 10px;
+    }
+
+   .warning-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.5); /* Adjust the last value (0 to 1) for opacity */
+    padding: 20px;
+    border-radius: 8px;
+    color: black;
+   }
+ 
+    /* Use a bold font for the logo text */
+    .logo {
+      margin-left: 20px;
+      margin-right: 10px;
+    }
+ 
+    /* Use media queries to adjust the menu items for different screen sizes */
+    @media (max-width: 600px) {
+      /* Hide the menu items on small screens */
+      .menu-item {
+        display: none;
+      }
+    }
+ 
+    @media (min-width: 600px) {
+      /* Show the menu items on large screens */
+      .menu-item {
+        display: block;
+        margin-right: 10px;
+      }
+    }
+ 
+    /* Use a transparent text box in the center of the page */
+    .text-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.3); /* 30% opacity */
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Create a menu bar with a logo and some links -->
+  <div class="menu">
+    <a href="index.html">
+    <div class="logo"><img src="taj-mahal (1).png" alt="Taj Mahal" style="width: 35px; height: auto;" href="index.html"></div>
+    </a>
+    <a class="menu-item" href="#">Home</a>
+    <a class="menu-item" href="#">About</a>
+    <a class="menu-item" href="#" id="contactLink">Help</a>
+  </div>
+
+  <div class="warning-box" id="warningBox">
+    Call Someone You Know.
+  </div>
+ 
+  <!-- Create a transparent text box with some content -->
+  <div class="text-box">
+    <h1>Welcome to Taj Imaginary</h1>
+    <p>This is a demo website for learning how to create a responsive webpage.</p>
+  </div>
+</body>
+<script>
+document.getElementById('contactLink').addEventListener('click', function() {
+    var warningBox = document.getElementById('warningBox');
+    warningBox.style.display = 'block';
+
+    setTimeout(function() {
+        warningBox.style.display = 'none';
+    }, 3000); // 5000 milliseconds = 5 seconds
+});
+</script>
+</html>
